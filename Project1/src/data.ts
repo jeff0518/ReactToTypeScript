@@ -2,7 +2,11 @@ import componentsImg from './assets/components.png';
 import propsImg from './assets/config.png';
 import jsxImg from './assets/jsx-ui.png';
 import stateImg from './assets/state-mgmt.png';
-import { ContentType } from './App';
+
+export type ContentType = {
+  [key: string]: { title: string; description: string; code: string };
+};
+
 export const CORE_CONCEPTS = [
   {
     image: componentsImg,

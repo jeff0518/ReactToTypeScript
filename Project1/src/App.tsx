@@ -7,10 +7,6 @@ import { CORE_CONCEPTS, EXAMPLES } from "./data.ts";
 import { CoreConceptProps } from "./components/CoreConcept.tsx";
 import "./index.css";
 
-export type ContentType = {
-  [key: string]: { title: string; description: string; code: string };
-};
-
 function App() {
   const mainSectionTabs: string[] = ["Components", "JSX", "Props", "State"];
   const [content, setContent] = useState<string>("Components");
