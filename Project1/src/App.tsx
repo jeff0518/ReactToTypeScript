@@ -9,7 +9,7 @@ import "./index.css";
 
 function App() {
   const mainSectionTabs: string[] = ["Components", "JSX", "Props", "State"];
-  const [content, setContent] = useState<string>("Components");
+  const [content, setContent] = useState<string>("");
   const selectHandler = (selectedButton: string) => {
     setContent(selectedButton);
   };
@@ -38,12 +38,17 @@ function App() {
           <menu>
             {mainSectionTabs.map((name) => {
               return (
-                <TabButton key={name} onSelect={() => selectHandler(name)}>
+                <TabButton
+                  key={name}
+                  isSelected={name === content}
+                  onSelect={() => selectHandler(name)}
+                >
                   {name}
                 </TabButton>
               );
             })}
           </menu>
+          {!content && <p>Please select a topic.</p>}
           {EXAMPLES[content] && (
             <div id="tab-content">
               <h3>{EXAMPLES[content].title}</h3>
